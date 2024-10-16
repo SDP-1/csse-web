@@ -2,6 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faSlidersH } from "@fortawesome/free-solid-svg-icons"; // Import icons
 import { Sidebar } from "@/components/Sidebar";
+import { UserTopRight } from "@/components/UserTopRight";
 
 export const AllRoutes = () => {
   return (
@@ -11,7 +12,9 @@ export const AllRoutes = () => {
         <Sidebar />
 
         {/* Content */}
-        <main className="flex flex-1 flex-col p-6">
+        <main className="flex-1 flex flex-col gap-6 p-4 md:p-8">
+             {/* Top Right User profile */}
+        <UserTopRight/>
           <header className="w-full bg-neutral-200 text-neutral-950 p-4 rounded-md mb-6 font-title text-lg">
             Waste Collection
           </header>
@@ -36,43 +39,44 @@ export const AllRoutes = () => {
             </div>
           </div>
 
-          {/* Table */}
-          <section className="overflow-hidden rounded-lg border border-gray-200">
-            <table className="min-w-full divide-y divide-gray-200 text-sm bg-teal-50">
-              <thead className="bg-teal-600">
-                <tr>
-                  <th className="px-6 py-3 text-left text-sm font-medium text-white">
-                    ID
-                  </th>
-                  <th className="px-6 py-3 text-left text-sm font-medium text-white">
-                    Name
-                  </th>
-                  <th className="px-6 py-3 text-left text-sm font-medium text-white">
-                    Status
-                  </th>
-                  <th className="px-6 py-3 text-left text-sm font-medium text-white">
-                    Section
-                  </th>
-                  <th className="px-6 py-3 text-left text-sm font-medium text-white">
-                    Route ID
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-200">
-                {[...Array(7)].map((_, index) => (
-                  <tr key={index} className="bg-white">
-                    <td className="px-6 py-4 text-slate-800">001</td>
-                    <td className="px-6 py-4 text-slate-800">John Doe</td>
-                    <td className="px-6 py-4 text-slate-800">Idle</td>
-                    <td className="px-6 py-4 text-slate-800">Section 01</td>
-                    <td className="px-6 py-4 text-teal-600 hover:underline">
-                      Route 001
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </section>
+{/* Table */}
+<section className="overflow-hidden rounded-lg border border-gray-200">
+  <table className="min-w-full text-sm bg-teal-50" style={{ borderCollapse: "separate", borderSpacing: "10px 0" }}>
+    <thead className="bg-white">
+      <tr className="bg-white">
+        <th className="px-6 py-3 text-left text-sm font-medium text-white bg-teal-600 rounded-md">
+          ID
+        </th>
+        <th className="px-6 py-3 text-left text-sm font-medium text-white bg-teal-600 rounded-md">
+          Name
+        </th>
+        <th className="px-6 py-3 text-left text-sm font-medium text-white bg-teal-600 rounded-md">
+          Status
+        </th>
+        <th className="px-6 py-3 text-left text-sm font-medium text-white bg-teal-600 rounded-md">
+          Section
+        </th>
+        <th className="px-6 py-3 text-left text-sm font-medium text-white bg-teal-600 rounded-md">
+          Route ID
+        </th>
+      </tr>
+    </thead>
+
+    <tbody className="divide-y divide-gray-200">
+      {[...Array(7)].map((_, index) => (
+        <tr key={index} className={`${index % 2 === 0 ? "bg-teal-50" : "bg-white"}`}>
+          <td className="px-6 py-4 text-slate-800">001</td>
+          <td className="px-6 py-4 text-slate-800">John Doe</td>
+          <td className="px-6 py-4 text-slate-800">Idle</td>
+          <td className="px-6 py-4 text-slate-800">Section 01</td>
+          <td className="px-6 py-4 text-teal-600 hover:underline">Route 001</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</section>
+
+
         </main>
       </div>
     </div>

@@ -2,6 +2,7 @@ import React from "react";
 import { Sidebar } from "@/components/Sidebar";
 import { RoutesSidebar } from "../components/RoutesSidebar"; // Import RoutesSidebar
 import { RouteDetails } from "../components/RouteDetails"; // Import RouteDetails
+import { UserTopRight } from "@/components/UserTopRight";
 
 export const CollectingRoute = () => {
   return (
@@ -10,8 +11,12 @@ export const CollectingRoute = () => {
         {/* Sidebar */}
         <Sidebar />
 
+       
+
         {/* Main Content */}
-        <main className="flex-grow flex flex-col p-6">
+        <main className="flex-1 flex flex-col gap-6 p-4 md:p-8">
+             {/* Top Right User profile */}
+        <UserTopRight/>
           <header className="w-full bg-neutral-200 text-neutral-950 p-4 rounded-md mb-6 font-title text-lg">
             Waste Collection Routes
           </header>

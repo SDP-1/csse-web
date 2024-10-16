@@ -13,10 +13,10 @@ export const Profile = () => {
           <div className="w-[60px] h-[60px] md:w-[80px] md:h-[80px] bg-neutral-300 rounded-full"></div>
           <div>
             <p className="text-sm text-neutral-700">
-              <span className="font-semibold">Name</span> Dasun Wickramasoriya
+              <span className="font-semibold">Name</span> Sehan Devinda
             </p>
             <p className="text-sm text-neutral-700">
-              <span className="font-semibold">ID</span> IW 002
+              <span className="font-semibold">ID</span> IW 001
             </p>
             <p className="text-sm text-neutral-700 flex items-center gap-1">
               <span className="font-semibold">Status</span> Working
