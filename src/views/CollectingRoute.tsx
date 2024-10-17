@@ -7,9 +7,9 @@ import { UserTopRight } from "@/components/UserTopRight";
 export const CollectingRoute = () => {
   return (
     <div id="webcrumbs" className="w-full flex justify-center">
-      <div className="w-full max-w-[1300px] flex shadow rounded-lg bg-neutral-50">
+      <div className="w-full flex shadow rounded-lg bg-neutral-50">
         {/* Sidebar */}
-        <Sidebar />
+        {/* <Sidebar /> */}
 
        
 

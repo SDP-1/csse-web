@@ -7,9 +7,9 @@ import { UserTopRight } from "@/components/UserTopRight";
 export const AllRoutes = () => {
   return (
     <div id="webcrumbs" className="w-full flex justify-center">
-      <div className="w-full max-w-[1300px] flex bg-white shadow-lg rounded-lg">
+      <div className="w-full flex bg-white shadow-lg rounded-lg">
         {/* Sidebar */}
-        <Sidebar />
+        {/* <Sidebar /> */}
 
         {/* Content */}
         <main className="flex-1 flex flex-col gap-6 p-4 md:p-8">

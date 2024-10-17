@@ -1,8 +1,10 @@
-import "./App.css";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AllRoutes } from "./views/AllRouts";
 import { CollectingRoute } from "./views/CollectingRoute";
-import { WasteCollectorDashboard } from "./views/WasteCollectorDashboard";
+import { WasteCollectorProfile } from "./views/WasteCollectorProfile";
 import { DashBoard } from "./views/DashBoard";
+import { Sidebar } from "./components/Sidebar";
 
 function App() {
   return (
@@ -11,10 +13,23 @@ function App() {
       {/* Add margin here */}
       {/* <div className="bg-red-700">Hello </div>
        */}
-      <DashBoard></DashBoard>
-      <WasteCollectorDashboard></WasteCollectorDashboard>
+      {/* <DashBoard></DashBoard>
+      <WasteCollectorProfile></WasteCollectorProfile>
       <CollectingRoute></CollectingRoute>
-      <AllRoutes></AllRoutes>
+      <AllRoutes></AllRoutes> */}
+      <Router>
+        <Sidebar>
+          <Routes>
+            <Route path="/" element={<DashBoard />} />
+            <Route
+              path="/waste-collector"
+              element={<WasteCollectorProfile />}
+            />
+            <Route path="/collecting-route" element={<CollectingRoute />} />
+            <Route path="/all-routes" element={<AllRoutes />} />
+          </Routes>
+        </Sidebar>
+      </Router>
     </div>
   );
 }
